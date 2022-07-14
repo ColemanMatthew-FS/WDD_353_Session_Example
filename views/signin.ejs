@@ -23,7 +23,7 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="page-heading">
-                            <h1>Log In</h1>
+                            <h1>Sign In</h1>
                             <span class="subheading">Sign in here.</span>
                         </div>
                     </div>
@@ -35,23 +35,17 @@
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
-                        <form id="contactForm" action="/register" method="post">
-                            <%if(typeof(errors) != "undefined"){%>
-                            <span><%=errors.status%></span>
+                        <form id="loginForm" action="/login" method="post">
+                            <%if(typeof(error) != "undefined"){%>
+                            <span><%=error%></span>
                             <% } %>
                             <div class="form-floating">
-                                <input class="form-control" id="firstName" name="firstName" type="text" placeholder="Enter your first name..."/>
-                                <%if(typeof(errors) != "undefined"){%>
-                                <span><%=errors.firstNameMsg%></span>
-                                <%}%>
-                                <label for="firstName">First Name</label>
+                                <input class="form-control" id="email" name="email" type="email" placeholder="Enter your email address..."/>
+                                <label for="userName">Email</label>
                             </div>
                             <div class="form-floating">
-                                <input class="form-control" id="lastName" name="lastName" type="text" placeholder="Enter your last name..."/>
-                                <%if(typeof(errors) != "undefined"){%>
-                                <span><%=errors.lastNameMsg%></span>
-                                <% } %>
-                                <label for="lastName">Last Name</label>
+                                <input class="form-control" id="password" name="password" type="password" placeholder="Enter your password..."/>
+                                <label for="password">Password</label>
                             </div>
                             <!-- Submit Button-->
                             <button class="btn btn-primary text-uppercase" id="submitButton" type="submit">Submit</button>
