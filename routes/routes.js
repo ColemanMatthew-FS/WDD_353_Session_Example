@@ -70,7 +70,6 @@ router.get("/signin",(req,res)=>{
 });
 
 router.post('/login', (req, res) => {
-    console.log(req.session)
     if (req.body.email == "Mike@aol.com" && req.body.password == "abc123") {
         session = req.session;
         session.userid = "Bob";
@@ -91,7 +90,6 @@ router.post('/login', (req, res) => {
 
 router.get('/logout', (req, res) => {
     req.session.destroy(null);
-    console.log(req.session);
     res.render('index', {
         pagename: 'Home'
     });
